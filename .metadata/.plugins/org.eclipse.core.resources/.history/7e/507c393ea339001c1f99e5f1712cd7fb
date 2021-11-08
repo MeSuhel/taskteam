@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Bank1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Integer cardnumber = 0;
+		String transactiondate = "";
+		String amount = "";
+		String line = null;
+		HashMap<Integer, String> hash_map = new HashMap<Integer, String>();
+		File f = new File("D:/banktransactions.txt");
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(f));
+			while ((line = br.readLine()) != null) {
+				String temp[] = line.split(",");
+				cardnumber = Integer.parseInt(temp[0]);
+				transactiondate = temp[1];
+				amount = temp[2];
+
+				System.out.println(cardnumber);
+				System.out.println(transactiondate);
+				System.out.println(amount);
+
+			}
+			br.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}

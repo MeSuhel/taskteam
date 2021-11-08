@@ -1,0 +1,70 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Bank {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+			String name = "";
+			int age = 0;
+			String gender = "";
+			String bank = "";
+			Long cardnumber = 0l;
+			int creditlimit = 0;
+			Long cardnumber1 = 0l;
+			String transactiondate = "";
+			int amount = 0;
+
+			try {
+				File f = new File("D:/bankaccount.txt");
+				File f1 = new File("D:/banktransactions.txt");
+
+				BufferedReader br = new BufferedReader(new FileReader(f));
+				BufferedReader br1 = new BufferedReader(new FileReader(f1));
+				String line = null;
+				System.out.println("Reading 1st file");
+				while ((line = br.readLine()) != null) {
+					String temp[] = line.split(",");
+					name = temp[0];
+					//age = Integer.parseInt(temp[1]);
+					gender = temp[2];
+					bank = temp[3];
+					cardnumber = Long.parseLong(temp[4]);
+					creditlimit = Integer.parseInt(temp[5]);
+
+					System.out.println(name);
+					//System.out.println(age);
+					System.out.println(gender);
+					System.out.println(bank);
+					System.out.println(cardnumber);
+					System.out.println(creditlimit);
+
+				}
+				System.out.println("Reading 2nd file");
+				while ((line = br1.readLine()) != null) {
+					String temp[] = line.split(",");
+					cardnumber1 = Long.parseLong(temp[0]);
+					transactiondate = temp[1];
+					amount = Integer.parseInt(temp[2]);
+
+					System.out.println(cardnumber1);
+					System.out.println(transactiondate);
+					System.out.println(amount);
+
+				}
+				br.close();
+				br1.close();
+
+			} catch (IOException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		
+	
+
+	}
+
+}

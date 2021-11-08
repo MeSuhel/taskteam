@@ -1,0 +1,46 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Bank {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name = "";
+		int age = 0;
+		String gender = "";
+		String bank = "";
+		Long cardnumber = 0l;
+		int creditlimit = 0;
+		
+		try { 
+			BufferedReader br = new BufferedReader(new FileReader("bankaccount.txt"));
+			String line = null;
+			
+			while ((line = br.readLine()) != null) {
+				String temp[] = line.split(",");
+				name = temp[0];
+				age = Integer.parseInt(temp[1]);
+				gender = temp[2];
+				bank = temp[3];
+				cardnumber = Long.parseLong(temp[4]);
+				creditlimit = Integer.parseInt(temp[5]);
+				
+				System.out.println(name);
+				System.out.println(age);
+				System.out.println(gender);
+				System.out.println(bank);
+				System.out.println(cardnumber);
+				System.out.println(creditlimit);
+				
+			}
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+}

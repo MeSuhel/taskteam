@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Bank1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String cardnumber = "";
+		String transactiondate = "";
+		String amount = "";
+		String line = null;
+		File f = new File("D:/banktransactions.txt");
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(f));
+			while ((line = br.readLine()) != null) {
+				String temp[] = line.split(",");
+				cardnumber = temp[0];
+				transactiondate = temp[1];
+				amount = temp[2];
+
+				System.out.println(cardnumber);
+				System.out.println(transactiondate);
+				System.out.println(amount);
+
+			}
+			br.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.me;
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class Hasm {
+	PriorityQueue<Integer> q = new PriorityQueue<Integer>();
+	
+	q.add(i);
+	
+	
+	Queue q1 = new PriorityQueue();
+
+}

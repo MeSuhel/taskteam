@@ -1,0 +1,29 @@
+package com.me;
+
+import java.util.TreeSet;
+
+public class TreeSet1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeSet<String> t = new TreeSet<String>();
+		
+		TreeSet<String> t1 = new TreeSet<String>();
+		
+		t.add("a");
+		t.add("b");
+		t.add("c");
+		t.add("d");
+		t.add("e");
+		
+		t1 = (TreeSet<String>) t.subSet("b", true, "d", true);
+		
+		t.add("g");
+		t.pollFirst();
+		t.pollFirst();
+		t.add("ok");
+		System.out.println(t.size());
+		System.out.println(t1.size());
+	}
+
+}
